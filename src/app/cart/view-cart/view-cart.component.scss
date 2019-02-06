@@ -1,0 +1,108 @@
+@import '~src/styles/colors';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/type";
+h1 {
+    color: $color-light-black;
+    font: 55px 'Times New Roman', sans-serif;
+    padding: 85px 0;
+    text-align: center;
+}
+
+.cart-page {
+    background-color: $color-cart-bg;
+    min-height: 500px;
+}
+
+.cart-body,
+.exception {
+    background-color: $color-white;
+    color: $color-dark-gray;
+    padding: 60px;
+}
+
+.tbl-heading {
+    border-bottom: 1px solid $color-tile-gray;
+    padding: 31px 0;
+}
+
+.h-txt {
+    font: 12px Helvetica, sans-serif;
+    letter-spacing: 1px;
+}
+
+.product-tile {
+    padding: 29px 0 68px;
+    border-bottom: 1px solid $color-tile-gray;
+    .info {
+        padding: 0 15px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        @include media-breakpoint-up(sm) {
+            margin-bottom: 0;
+        }
+        a {
+            display: block;
+            font-size: 13px;
+            letter-spacing: 1px;
+            margin: 4px 0 10px;
+        }
+    }
+    @include media-breakpoint-up(sm) {
+        app-inventory-counter {
+            float: right;
+        }
+    }
+}
+
+.sub-text {
+    color: $color-light-black;
+    font-size: 12px;
+}
+
+.price {
+    color: $color-dark-gray;
+    font: 18px 'Playfair Display', serif;
+}
+
+.icon-remove {
+    background-color: $color-dark-gray;
+    margin-right: 20px;
+}
+
+.trolley-summary {
+    padding: 30px 0 34px;
+    border-bottom: 1px solid $color-tile-gray;
+    .h-txt {
+        margin-bottom: 9px;
+    }
+    .sub-text {
+        color: $color-light-black;
+    }
+    .row {
+        padding: 7px 0;
+    }
+}
+
+.button-group {
+    padding: 25px 0;
+    text-align: center;
+    @include media-breakpoint-up(sm) {
+        text-align: left;
+        .btn {
+            float: right;
+        }
+    }
+    a {
+        border-bottom: 1px solid $color-light-black;
+        color: $color-light-black;
+        display: inline-block;
+        font-size: 13px;
+        margin: 20px auto;
+        width: 138px;
+        @include media-breakpoint-up(sm) {
+            margin: 0;
+        }
+    }
+}

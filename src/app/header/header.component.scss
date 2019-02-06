@@ -1,0 +1,62 @@
+@import '~src/styles/colors';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/type";
+.navbar-wrapper {
+    border-bottom: 1px solid $color-tile-gray;
+    background-color: $color-white;
+    height: 140px;
+    .brand-logo {
+        padding: 10px 30px 10px 15px;
+    }
+    @include media-breakpoint-up(sm) {
+        height: 90px;
+        padding: 10px 30px 10px 15px;
+        .brand-logo {
+            float: left;
+            padding: 0;
+        }
+    }
+}
+
+.nav {
+    border-top: 1px solid $color-tile-gray;
+    font-family: 'Montserrat', sans-serif;
+    list-style: none;
+    padding: 18px;
+    @include media-breakpoint-up(sm) {
+        border: 0;
+        margin: 26px auto;
+        padding: 0;
+        width: 360px;
+    }
+    li {
+        color: $color-light-black;
+        cursor: pointer;
+        float: left;
+        font-weight: bold;
+        font-size: 12px;
+        padding: 0 17px;
+        &:first-child {
+            padding-left: 0;
+        }
+        i {
+            vertical-align: text-top;
+        }
+    }
+}
+
+.cart {
+    color: $color-light-black;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    @include media-breakpoint-up(sm) {
+        float: right;
+        position: inherit;
+    }
+}

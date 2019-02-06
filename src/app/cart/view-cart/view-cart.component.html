@@ -1,0 +1,54 @@
+<div class="cart-page">
+    <h1>Shopping Cart</h1>
+
+    <div class="container cart-body" *ngIf="trolley.totalQty">
+
+        <div class="row tbl-heading h-txt">
+            <div class="d-none d-sm-block col-md-6 p-0">PRODUCT</div>
+            <div class="d-none d-sm-block col-md-2 text-right p-0">QUANTITY</div>
+            <div class="d-none d-sm-block col-md-2 text-right p-0">TOTAL</div>
+            <div class="d-none d-sm-block col-md-2 text-right p-0">ACTION</div>
+        </div>
+
+        <!-- list of products added in the cart -->
+        <div class="row product-tile" *ngFor="let product of trolley.products;trackBy:stockCode;">
+            <div class="col-12 col-md-6 d-flex p-0">
+                <img src="/assets/images/{{product.image}}" height="82" />
+                <div class="info">
+                    <div class="h-txt">{{product.brand}}</div>
+                    <a routerLink="/" class="sub-text">{{product.title}}</a>
+                    <div><span class="h-txt">COLOR:</span> <span class="sub-text">WHITE</span></div>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 text-right p-0">
+                <app-inventory-counter [product]="product"></app-inventory-counter>
+            </div>
+            <div class="col-4 col-md-2 text-right p-0 price">
+                ${{product.price * product.qtyInTrolley | number : '1.2'}}
+            </div>
+            <div class="col-4 col-md-2 cursor-pointer" (click)="removeProduct(product)"><i class="icon-remove float-right"></i></div>
+        </div>
+
+        <div class="row trolley-summary">
+            <div class="offset-md-8 col-md-4">
+                <div class="h-txt">CART OVERVIEW</div>
+                <div class="row">
+                    <div class="col-6 col-md-6 h-txt">SUBTOTAL</div>
+                    <div class="col-6 col-md-6 h-txt">${{trolley.subTotal | number : '1.2'}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-6 col-md-6 h-txt">TOTAL</div>
+                    <div class="col-6 col-md-6 sub-text">${{trolley.total | number : '1.2'}} CAD</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <a routerLink="/">CONTINUE SHOPPING</a>
+            <button class="btn btn-default">CHECKOUT ( ${{trolley.total | number : '1.2'}} )</button>
+        </div>
+    </div>
+    <div class="container exception text-center" *ngIf="!trolley.totalQty">
+        Your shopping cart is currently empty.
+    </div>
+</div>

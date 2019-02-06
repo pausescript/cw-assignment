@@ -1,0 +1,32 @@
+<div *ngIf="product">
+
+    <!--breadcrumb content-->
+    <ul class="breadcrumb text-center">
+        <li><a routerLink="/">HOME</a>&nbsp;&nbsp;/&nbsp;&nbsp;</li>
+        <li><a routerLink="/">PLATES</a>&nbsp;&nbsp;/&nbsp;&nbsp;</li>
+        <li>{{product.title}}</li>
+    </ul>
+
+    <!--product detail page body content-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="image-wrapper">
+                    <img src="/assets/images/{{product.image}}" height="445" width="100%" />
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="product-info">
+                    <div class="brand">{{product.brand}}</div>
+                    <h2 class="title">{{product.title}}</h2>
+                    <div class="price">${{product.price | number : '1.2' }}</div>
+                    <p class="description">{{product.description}}</p>
+                </div>
+                <div class="add-to-cart">
+                    <app-inventory-counter class="float-left" [product]="product"></app-inventory-counter>
+                    <button class="btn btn-default" (click)="addToCart()">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

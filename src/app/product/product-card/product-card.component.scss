@@ -1,0 +1,49 @@
+@import '~src/styles/colors';
+.card {
+    font-family: Helvetica, sans-serif;
+    cursor: pointer;
+    margin: 25px 7px;
+    position: relative;
+    text-align: center;
+    &:hover {
+        .overlay {
+            opacity: .8;
+            visibility: visible;
+        }
+    }
+}
+
+img {
+    height: 220px;
+}
+
+.overlay {
+    transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -webkit-transition: opacity .5s ease-in-out;
+    background: $color-cart-bg;
+    height: 220px;
+    opacity: 0;
+    padding-top: 50px;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    width: 100%;
+}
+
+.brand {
+    color: $color-gray;
+    font-size: 14px;
+    margin: 25px 0 3px;
+}
+
+.title {
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.price {
+    color: $color-gray;
+    font: 16px 'Playfair Display', serif;
+    margin: 4px 0 12px;
+}

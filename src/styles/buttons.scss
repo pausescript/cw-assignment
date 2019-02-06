@@ -1,0 +1,10 @@
+.btn-default {
+    @include button-variant($color-btn-bg, $color-btn-bg, lighten($color-btn-bg, 10%));
+    @include button-size(27px, 30px, 13px, 0, 0);
+    color: $color-white;
+    text-align: center;
+    &.active {
+        background-color: $color-light-black;
+        color: $color-white;
+    }
+}

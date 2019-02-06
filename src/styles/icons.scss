@@ -1,0 +1,23 @@
+.icon-remove {
+  cursor: pointer;
+  height: 20px;
+  position: relative;
+
+  &:before,
+  &:after {
+    background-color: inherit;
+    content: ' ';
+    left: 15px;
+    height: 30px;
+    position: absolute;
+    width: 1px;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+}

@@ -1,0 +1,70 @@
+@import '~src/styles/colors';
+@import '~bootstrap/scss/functions';
+@import "~bootstrap/scss/mixins";
+@import '~bootstrap/scss/variables';
+@import "~bootstrap/scss/type";
+
+.breadcrumb {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 28px 0 41px;
+
+    li {
+        color: $color-light-black;
+        cursor: pointer;
+        display: inline;
+        font-weight: bold;
+        font-size: 12px;
+
+        &:last-child {
+            color: $color-gray;
+        }
+    }
+}
+
+.image-wrapper {
+    background-color: $color-tile-gray;
+    text-align: center;
+    height: 445px;
+    width: 100%;
+}
+
+.product-info {
+    border-bottom: 1px solid $color-tile-gray;
+    text-align: center;
+    margin: 30px 5px 25px 5px;
+
+    @include media-breakpoint-up(sm) {
+        margin: 30px 0 25px 30px;
+    }
+}
+
+.brand {
+    font: 14px Helvetica, sans-serif;
+    color: $color-dark-gray;
+}
+
+.title {
+    font: 32px/1.4 'Noto Serif TC', serif;
+    margin: 20px;
+}
+.price {
+    color: $color-dark-gray;
+    font: bold 20px 'Playfair Display', serif;
+    margin: 4px 0 15px;
+}
+
+.description {
+    color: $color-dark-gray;
+    font: 15px/1.6 Helvetica, sans-serif;
+    padding-bottom: 9px;
+}
+
+.add-to-cart {
+    margin: 0 auto;
+    width: 250px;
+}
+
+.btn-default {
+    margin-left: 7px;
+}

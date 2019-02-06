@@ -1,0 +1,39 @@
+@import '~src/styles/colors';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/type";
+.banner {
+    background-image: url('/assets/images/plates-header.jpg');
+    height: 340px;
+    background-position: center;
+}
+
+.content {
+    background-color: $color-light-black;
+    color: $color-white;
+    height: 100%;
+    margin: 0 auto;
+    padding: 110px 35px 0 35px;
+    @include media-breakpoint-up(sm) {
+        border: 10px solid;
+        border-bottom: 0;
+        border-top: 0;
+        width: 50%;
+    }
+    h1 {
+        font-family: 'Palatino';
+        .label {
+            border-bottom: 1px solid;
+            padding-bottom: 10px;
+        }
+    }
+    p {
+        font: 14px Helvetica, sans-serif;
+        margin-top: 28px;
+    }
+}
+
+.product-list {
+    margin: 35px auto;
+}

@@ -1,0 +1,16 @@
+<div class="card">
+    <a routerLink="/product/{{product.stockCode}}">
+        <img src="/assets/images/{{product.image}}" width="100%" />
+    </a>
+
+    <div class="overlay">
+        <a routerLink="/product/{{product.stockCode}}" class="btn btn-default">VIEW DETAILS</a><br><br>
+        <button class="btn btn-default" (click)="addToCart()">ADD TO CART</button>
+    </div>
+
+    <div class="brand" (click)="navigatePDP()">{{product.brand}}</div>
+    <a class="title" routerLink="/product/{{product.stockCode}}">
+      {{product.title}}
+  	</a>
+    <div class="price" (click)="navigatePDP()">${{product.price | number : '1.2'}}</div>
+</div>

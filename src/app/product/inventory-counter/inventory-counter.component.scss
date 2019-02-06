@@ -1,0 +1,30 @@
+@import '~src/styles/colors';
+.inventory-wrapper {
+    height: 80px;
+    width: 80px;
+}
+
+input {
+    background-color: $color-tile-gray;
+    border: 0;
+    border-right: 2px solid $color-white;
+    color: $color-dark-gray;
+    float: left;
+    text-align: center;
+    height: 57px;
+    width: 52px;
+}
+
+.counter {
+    li {
+        background-color: $color-tile-gray;
+        color: $color-dark-gray;
+        cursor: pointer;
+        text-align: center;
+        width: 37px;
+        height: 28px;
+        &:first-child {
+            border-bottom: 1px solid $color-white;
+        }
+    }
+}
