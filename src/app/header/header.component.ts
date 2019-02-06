@@ -25,6 +25,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
     });
   }
 
+  removeProduct(product) {
+    this.cartService.removeFromCart(product);
+  }
+
+  trackByFn(index) {
+    return index;
+  }
+
   ngOnDestroy() {
     this.unsubscribe.next();
     this.unsubscribe.complete();

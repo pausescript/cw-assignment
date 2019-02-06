@@ -60,3 +60,85 @@
         position: inherit;
     }
 }
+
+.popover {
+    padding: 25px 15px 14px;
+}
+
+.cart-popover {
+    background-color: $color-white;
+    box-shadow: 1px 10px 8px -1px $color-gray;
+    margin-top: 10px;
+    position: absolute;
+    z-index: 1;
+    left: -250px;
+    width: 360px;
+    @include media-breakpoint-up(sm) {
+        left: auto;
+        right: 25px;
+        width: 420px;
+    }
+    ul {
+        border-bottom: 1px solid $color-tile-gray;
+    }
+    li {
+        margin-bottom: 15px;
+    }
+}
+
+.info {
+    padding: 0 15px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    width: 220px;
+    @include media-breakpoint-up(sm) {
+        margin-bottom: 0;
+        width: 230px;
+    }
+    a {
+        display: block;
+        font-size: 13px;
+        letter-spacing: 1px;
+        margin: 2px 0;
+    }
+}
+
+.h-txt {
+    color: $color-dark-gray;
+    font: 12px Helvetica, sans-serif;
+    letter-spacing: 1px;
+}
+
+.price {
+    color: $color-light-black;
+    font: 12px Helvetica, sans-serif;
+    margin: 4px 0 12px;
+}
+
+.btn-group {
+    margin-top: 15px;
+    .btn {
+        width: 148px;
+        @include media-breakpoint-up(sm) {
+            width: 178px;
+        }
+    }
+    .btn-white {
+        margin-right: 15px;
+    }
+}
+
+.icon-remove {
+    background-color: $color-dark-gray;
+    margin-right: 25px;
+    &:before,
+    &:after {
+        height: 20px;
+    }
+}
+
+.exception {
+    background-color: $color-white;
+    color: $color-dark-gray;
+    padding: 60px;
+}

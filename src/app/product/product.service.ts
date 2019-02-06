@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { Observable } from 'rxjs/internal/Rx';
 import { UtilService } from '../util/util.service';
 import { catchError } from 'rxjs/operators';
@@ -14,7 +15,7 @@ export class ProductService {
   constructor(private httpClient: HttpClient, private utilService: UtilService) { }
 
   getListOfProducts(): Observable<Array<Product>> {
-    return this.httpClient.get(`/assets/json/products.json`).pipe(
+    return this.httpClient.get(`./assets/json/products.json`).pipe(
       map(response => {
         return response as Array<Product>;
       }, catchError((error) => {
@@ -23,7 +24,7 @@ export class ProductService {
   }
 
   getProduct(stockCode: String): Observable<Product> {
-    return this.httpClient.get(`/assets/json/products.json`).pipe(
+    return this.httpClient.get(`./assets/json/products.json`).pipe(
       map(response => {
         return (response as Array<Product>).find(function(product) { return product.stockCode === stockCode; });
       }, catchError((error) => {

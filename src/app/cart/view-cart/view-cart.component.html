@@ -13,7 +13,7 @@
         <!-- list of products added in the cart -->
         <div class="row product-tile" *ngFor="let product of trolley.products;trackBy:stockCode;">
             <div class="col-12 col-md-6 d-flex p-0">
-                <img src="/assets/images/{{product.image}}" height="82" />
+                <img src="./assets/images/{{product.image}}" height="82" />
                 <div class="info">
                     <div class="h-txt">{{product.brand}}</div>
                     <a routerLink="/" class="sub-text">{{product.title}}</a>

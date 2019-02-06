@@ -1,5 +1,4 @@
 $enable-grid-classes: true;
-
 // Core SCSS
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
@@ -11,9 +10,8 @@ $enable-grid-classes: true;
 @import "~bootstrap/scss/code";
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/tables";
-
 // Components
 @import "~bootstrap/scss/buttons";
-
+@import "../node_modules/bootstrap/scss/transitions";
 // Utility classes
 @import "~bootstrap/scss/utilities";

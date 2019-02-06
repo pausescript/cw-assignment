@@ -1,6 +1,6 @@
 <div class="navbar-wrapper">
     <a routerLink="/">
-        <img src="assets/images/logo.png" class="brand-logo">
+        <img src="./assets/images/logo.png" class="brand-logo">
     </a>
     <nav>
         <ul class="nav">
@@ -10,5 +10,32 @@
             <li><a>MORE &nbsp;<i class="fa fa-caret-down"></i></a></li>
         </ul>
     </nav>
-    <a class="cart" routerLink="cart">MY&nbsp;&nbsp;CART&nbsp;&nbsp;({{trolleyInfo.totalQty}})&nbsp;&nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
+    <div class="cart">
+        <a data-toggle="collapse" href="#cartPopover" role="button" aria-expanded="false" aria-controls="cartPopover">MY&nbsp;&nbsp;CART&nbsp;&nbsp;({{trolleyInfo.totalQty}})&nbsp;&nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
+        <div id="cartPopover" class="collapse cart-popover">
+            <div class="popover" *ngIf="trolleyInfo.totalQty">
+                <ul class="p-0">
+                    <li class="clearfix" *ngFor="let product of trolleyInfo.products;let index = index; trackBy: trackByFn;">
+                        <img src="./assets/images/{{product.image}}" class="float-left" height="80" width="80" />
+                        <div class="info float-left">
+                            <a routerLink="/" class="sub-text">{{product.title}} x {{product.qtyInTrolley}}</a>
+                            <div class="h-txt">{{product.brand}}</div>
+                            <div class="price">${{product.price | number : '1.2'}}</div>
+                        </div>
+                        <div class="float-right" (click)="removeProduct(product)"><i class="icon-remove"></i></div>
+                    </li>
+                </ul>
+                <div class="clearfix">
+                    <span class="h-txt float-left">TOTAL</span>
+                    <span class="h-txt float-right">${{trolleyInfo.total  | number : '1.2'}}</span>
+                </div>
+
+                <div class="btn-group">
+                    <a class="btn btn-white" routerLink="cart">VIEW CART</a>
+                    <a class="btn btn-default" href="#">CHECKOUT</a>
+                </div>
+            </div>
+            <div class="exception" *ngIf="!trolleyInfo.totalQty">Your shopping cart is currently empty.</div>
+        </div>
+    </div>
 </div>

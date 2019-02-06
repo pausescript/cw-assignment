@@ -8,3 +8,10 @@
         color: $color-white;
     }
 }
+
+.btn-white {
+    @include button-variant($color-white, $color-light-black, $color-cart-bg);
+    @include button-size(27px, 30px, 13px, 0, 0);
+    color: $color-light-black;
+    text-align: center;
+}
